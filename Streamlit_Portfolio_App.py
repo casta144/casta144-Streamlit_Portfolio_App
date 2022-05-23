@@ -75,7 +75,7 @@ mentions = get_dict_wsb()
 
 # Tab 📈 Trending
 # Function that runs through the historical data and selects stocks based on a calculations known as a breakout trend.
-@st.experimental_memo(ttl=86400, show_spinner=True)
+@st.experimental_memo(show_spinner=True)
 def get_trending_stock(trending_num_days):
     cursor.execute(f""" SELECT * FROM ( SELECT date, open, close, symbol, lAG(close, 1) OVER ( ORDER BY date) 
     previous_close, LAG(open, 1) OVER ( ORDER BY date) previous_open FROM data_stocks_daily ) a 

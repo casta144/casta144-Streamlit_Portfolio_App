@@ -88,7 +88,7 @@ def get_trending_stock(trending_num_days):
 
 # Tab 🔎 Search for Stocks
 # Convert Dataframe to csv for users to be able to download
-@st.experimental_memo(ttl=86400, show_spinner=True)
+@st.experimental_memo(show_spinner=True)
 def convert_df(data_set_for_download):
     # IMPORTANT: Cache the conversion to prevent computation on every rerun
     return data_set_for_download.to_csv().encode('utf-8')
@@ -97,7 +97,7 @@ def convert_df(data_set_for_download):
 # Tab 🔎 Search for Stocks
 # Function to obtain a list of the symbols that have at least 4 years of historical data, for the user to be able to
 # filter through in the tab
-@st.experimental_memo(ttl=86400, show_spinner=True)
+@st.experimental_memo(show_spinner=True)
 def get_symbol_list():
     data_full_set = cursor.execute("""
                 select symbol
@@ -124,7 +124,7 @@ symbols_list_comp.sort()
 # Function that runs an API request to obtain the information for a company
 # with that it is paired with preselected fields to display, limiting the information for the tab.
 # And a iterations to match both the API results with the preselected fields
-@st.experimental_memo(ttl=86400, show_spinner=True)
+@st.experimental_memo(show_spinner=True)
 def yahoo_company_info(ticker):
     symbol_info_company = yf.Ticker(ticker)
     company_info = symbol_info_company.info

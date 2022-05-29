@@ -5,7 +5,7 @@ import streamlit as st
 import yfinance as yf
 
 st.set_page_config(
-    page_title="Advance Trading Bot",
+    page_title="Alex Castro Portfolio",
     page_icon=":rocket:",
     layout="wide",
     initial_sidebar_state="expanded", )

@@ -143,7 +143,7 @@ if option == '🏠 Home':
     home_about_project, home_about_others = st.columns(2)
 
     with home_about_project.expander("🔖 My Coding Journey"):
-        st.markdown("### Hi, my name is Alejandro Castro.")
+        st.markdown("### Hi, my name is Alex Castro.")
         st.write("""Over the past couple of years, I started to learn how to code over a personal interest I had in 
         the stock market. My first script was a web scraper that collects the real-time stock price from Yahoo 
         Finance, utilizing BeautifulSoup & Requests as the two libraries. I have also developed multiple projects 
@@ -158,15 +158,8 @@ if option == '🏠 Home':
         with my experience as an analyst for over five years and these skillsets, I am ready for the next step in my 
         journey.""")
 
-        st.markdown('###### Linkedin: www.linkedin.com/in/alejandro-castro-0938101a9')
+        st.markdown('###### Linkedin: www.linkedin.com/in/alex-castro-0938101a9')
         st.markdown('###### Email: Castro.alejandro1808@gmail.com',)
-        with open("Alejandro Castro Resume 2022.pdf", "rb") as file:
-            btn = st.download_button(
-                label="Download my Resume",
-                data=file,
-                file_name="Alejandro Castro Resume 2022.pdf",
-                mime="application/octet-stream"
-            )
 
     with home_about_others.expander("🔖 About My Portfolio"):
         st.markdown("### The Dashboard")
